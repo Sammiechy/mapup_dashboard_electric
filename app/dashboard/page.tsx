@@ -7,8 +7,8 @@ import {vehicleData} from '@/vehicleData'
 
 const Dashboard = () => {
 
-  const Data :any= vehicleData;
-  const vehicleByCity = Data?.reduce((acc:any, vehicle:any) => {
+  const Data = vehicleData;
+  const vehicleByCity = Data?.reduce((acc, vehicle) => {
     const city = vehicle.City;
     if (!acc[city]) {
       acc[city] = 1;

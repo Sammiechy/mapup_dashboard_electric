@@ -19,14 +19,14 @@ const page = () => {
   const totalVehicles = vehicleData.length;
   
   const averageRange =
-  vehicleData?.reduce((acc:any, vehicle:any) => acc + (vehicle?.["Electric Range"] || 0), 0) / totalVehicles || 0;
+  vehicleData?.reduce((acc, vehicle) => acc + (vehicle?.["Electric Range"] || 0), 0) / totalVehicles || 0;
   
-  const totalElectricRange = vehicleData?.reduce((acc:any, vehicle:any) => {
+  const totalElectricRange = vehicleData?.reduce((acc, vehicle) => {
     return acc + (vehicle?.["Electric Range"] || 0);
   }, 0);
 
   console.log(averageRange,totalVehicles,"vehicleData----")
-  const makeCounts = vehicleData?.reduce((acc:any, vehicle:any) => {
+  const makeCounts = vehicleData?.reduce((acc, vehicle) => {
     if (vehicle) {
       acc[vehicle.Make] = (acc[vehicle.Make] || 0) + 1;
     }

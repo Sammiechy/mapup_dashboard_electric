@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './layout.module.css';
 import Link from 'next/link';
 
-const Layout = ({children}:any) => {
+const Layout = ({children}) => {
   return (
     <div className={styles.container}>
     <nav className={styles.sidebar}>

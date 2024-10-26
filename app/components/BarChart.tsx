@@ -21,7 +21,7 @@ import {
     ArcElement
   );
   
-const BarChart = ({data, options}:any) => {
+const BarChart = ({data, options}) => {
 
 
   return (
