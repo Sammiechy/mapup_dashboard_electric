@@ -1,30 +1,12 @@
 'use client'
-import Layout from "./components/Layout";
-import BarChart from "./components/BarChart";
+import React from 'react'
+import Layout from '../components/Layout';
+import BarChart from '../components/BarChart';
+import TableComp from '../components/TableComp';
 import {vehicleData} from '@/vehicleData'
-import {
-  Chart as ChartJS,
-  CategoryScale,     
-  LinearScale,       
-  BarElement,       
-  Title,             
-  Tooltip,           
-  Legend,   
-  ArcElement         
-} from 'chart.js';
-import TableComp from "./components/TableComp";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-  ArcElement
-);
+const Dashboard = () => {
 
-export default function Home() {
   const Data :any= vehicleData;
   const vehicleByCity = Data?.reduce((acc:any, vehicle:any) => {
     const city = vehicle.City;
@@ -48,18 +30,19 @@ export default function Home() {
       },
     ],
   };
-  const options = {
-    responsive: true,
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
-  return (
-  <>
-  <Layout>
 
+
+      const options = {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      };
+
+  return (
+    <Layout>
       <h1>Dashboard Overview</h1>
       <div style={{ width: '80%', margin: 'auto' }}>
         <BarChart data={chartData} options={options}/>
@@ -69,7 +52,7 @@ export default function Home() {
         <TableComp Data={Data} />
       </div>
     </Layout>
-
-  </>
-  );
+  )
 }
+
+export default Dashboard;
